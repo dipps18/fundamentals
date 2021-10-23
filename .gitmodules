@@ -1,0 +1,6 @@
+[submodule "custom_enumerables"]
+	path = custom_enumerables
+	url = git@github.com:dipsthedestroya/custom_enumerables.git
+[submodule "recursion"]
+	path = recursion
+	url = git@github.com:dipsthedestroya/recursion.git
