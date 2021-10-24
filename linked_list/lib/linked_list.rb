@@ -109,7 +109,7 @@ class LinkedList
     prev = nil
     if index.zero?
       @head = @head.next
-      @tail == head if count == 1
+      @tail = head if count == 1
     else
       prev = at(index - 1)
       prev.next = at(index + 1)
