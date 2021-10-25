@@ -108,7 +108,6 @@ class Tree
     count
   end
 
-  # This is incorrect 
   def depth(node, root = @root, count = 0)
     return count if root == node
     return nil if root == nil
