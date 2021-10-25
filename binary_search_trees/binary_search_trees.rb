@@ -108,8 +108,13 @@ class Tree
     count
   end
 
-  def depth(node)
-    height(@root) - height(node)
+  # This is incorrect 
+  def depth(node, root = @root, count = 0)
+    return count if root == node
+    return nil if root == nil
+    count = count + 1
+    node.data > root.data ? (count = depth(node, root.right, count)) : (count = depth(node, root.left, count))
+    count
   end
 
   def pretty_print(node = @root, prefix = '', is_left = true)
@@ -144,6 +149,7 @@ t.preorder { |node| print "#{node.data} -> " }
 t.postorder { |node| print "#{node.data} -> " }
 
 150.times { t.insert(rand(1..100)) }
+
 t.pretty_print
 t.balanced?
 t.rebalance
@@ -158,3 +164,9 @@ t.pretty_print
 t.inorder { |node| print "#{node.data} -> " }
 t.preorder { |node| print "#{node.data} -> " }
 t.postorder { |node| print "#{node.data} -> " }
+
+t1 = Tree.new([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324])
+
+t1.pretty_print
+t1.depth(t1.find(23))
+t1.depth(t1.find(324))
