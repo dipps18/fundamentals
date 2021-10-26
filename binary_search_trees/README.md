@@ -1,4 +1,4 @@
-#Classed and methods
+# Classes and Methods
 
 1) class Node: It stores the data as well as left and right children of a tree.
 
